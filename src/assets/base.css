@@ -2,15 +2,12 @@
 :root {
 
   /* Normal Light Color */
-  --light-main-color: #f6aeaf
+  --light-main-color: #f6aeaf;
+  --dark-main-color: #E3A1A2;
 }
 
 /* semantic color variables for this project */
 :root {
-  
-  
-
-
   --section-gap: 160px;
 }
 

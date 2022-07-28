@@ -1,6 +1,8 @@
 <template>
   <header>
-    <navbar class="navbar navbar-expand-sm navbar-dark pt-0 pb-0 ps-4">
+    <navbar
+      class="navbar navbar-expand-sm navbar-dark pt-0 pb-0 ps-sm-4 pe-sm-4"
+    >
       <div class="container-fluid">
         <a href="/" class="navbar-brand">
           <img
@@ -20,12 +22,12 @@
 
         <div class="collapse navbar-collapse text-center" id="navbarsLink">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link active">
+            <h5 class="nav-link active">
               <RouterLink to="/">Shop</RouterLink>
-            </a>
-            <a class="nav-link">
+            </h5>
+            <h5 class="nav-link">
               <RouterLink to="/about">Contact</RouterLink>
-            </a>
+            </h5>
           </div>
         </div>
       </div>
@@ -38,8 +40,8 @@
 
 navbar {
   background-color: var(--light-main-color);
+  /* padding-left: ($spacer * 1.5) !important; */
 }
-
 .navbar-brand img {
   padding: 0.5rem;
   width: 60%;
@@ -49,6 +51,13 @@ navbar {
   color: white;
   text-decoration: none;
   font-family: "Signika", sans-serif;
+}
+
+/* Small Screen - Portrait Mode */
+@media only screen and (max-device-width: 478px) and (orientation: portrait) {
+  navbar .container-fluid a {
+    width: 70%;
+  }
 }
 </style>
 
