@@ -1,7 +1,8 @@
 <template>
   <header>
+    <!-- "navbar navbar-expand-sm navbar-dark pt-0 pb-0 ps-sm-4 pe-sm-4" -->
     <navbar
-      class="navbar navbar-expand-sm navbar-dark pt-0 pb-0 ps-sm-4 pe-sm-4"
+      class="navbar navbar-expand-sm navbar-dark pt-0 pb-0"
     >
       <div class="container-fluid">
         <a href="/" class="navbar-brand">
@@ -40,11 +41,12 @@
 
 navbar {
   background-color: var(--light-main-color);
-  /* padding-left: ($spacer * 1.5) !important; */
+  padding-left: 20vh;
+  padding-right: 20vh;
 }
 .navbar-brand img {
   padding: 0.5rem;
-  width: 60%;
+  width: 75%;
 }
 
 .nav-link a {
@@ -55,6 +57,11 @@ navbar {
 
 /* Small Screen - Portrait Mode */
 @media only screen and (max-device-width: 478px) and (orientation: portrait) {
+
+  navbar {
+      padding-left: 0;
+      padding-right: 0;
+  }
   navbar .container-fluid a {
     width: 70%;
   }

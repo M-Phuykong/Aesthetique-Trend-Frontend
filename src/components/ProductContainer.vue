@@ -33,7 +33,7 @@ export default defineComponent({
       product_list: [],
     };
   },
-  mounted() {
+  created() {
     this.getProduct();
   },
   methods: {

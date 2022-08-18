@@ -1,15 +1,30 @@
+@import url("https://use.typekit.net/tkv8vrp.css");
+
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
 
   /* Normal Light Color */
   --light-main-color: #f6aeaf;
   --dark-main-color: #E3A1A2;
+
+  /* #DB9C9D */
+  --gradient-dark-color: #f2829c;
+
+  --green-light-color: #81ed5a;
+  --green-dark-color: #40dc18
+
+
+  /* Font */
+  --product-title-font: 'terfens', 'Arial Black', sans-serif;
+
 }
 
 /* semantic color variables for this project */
 :root {
   --section-gap: 160px;
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -34,6 +49,42 @@
   font-weight: normal;
 }
 
+html,
+body {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  overflow: overlay;
+  scroll-behavior: smooth;
+}
+
+/* Scroll bar */
+
+::-webkit-scrollbar {
+  width: 20px;
+  background: transparent;
+  z-index: 1;
+  cursor: pointer !important;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  cursor: pointer !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  cursor: pointer !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer !important;
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text);
@@ -46,4 +97,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media only screen and (max-device-width: 478px) and (orientation: portrait) {
+
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
 }
