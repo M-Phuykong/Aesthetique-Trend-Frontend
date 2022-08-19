@@ -85,6 +85,10 @@ body {
   cursor: pointer !important;
 }
 
+main {
+  margin: auto;
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text);
@@ -99,10 +103,107 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media only screen and (max-device-width: 478px) and (orientation: portrait) {
+/**                            media queries                                **/
+/** ----------------------------------------------------------------------- **/
 
+/** each media query contains a main and :root                              **/
+/** main affects the container width                                        **/
+/** root will cause container to scale by the multiplier of the rem value   **/
+/**                                                                         **/
+
+
+@media only screen and (max-device-width: 478px) and (orientation: portrait) {
   ::-webkit-scrollbar {
     width: 0;
   }
+}
 
+@media only screen and (min-width: 768px) {
+  :root {
+    font-size: calc((750/1200) * 1rem) !important;
+  }
+
+  main {
+    width: 750px !important;
+  }
+}
+
+@media only screen and (min-width: 62rem) and (min-height: 32.5rem) {
+  :root {
+    font-size: calc((972/1200) * 1rem) !important;
+  }
+
+  main {
+    width: 972px !important;
+  }
+}
+
+@media only screen and (min-width: 68.75rem) and (min-height: 36.1125rem) {
+  :root {
+    font-size: calc((1080/1200) * 1rem) !important;
+  }
+
+  main {
+    width: 1080px !important;
+  }
+}
+
+@media only screen and (min-width: 76.25rem) and (min-height: 40.125rem) {
+  :root {
+    font-size: 1rem !important;
+  }
+
+  main {
+    width: 1200px !important;
+  }
+}
+
+@media only screen and (min-width: 90rem) and (min-height: 46.875rem) {
+  :root {
+    font-size: calc((1400/1200) * 1rem) !important;
+  }
+
+  main {
+    width: 1400px !important;
+  }
+}
+
+@media only screen and (min-width: 103.125rem) and (min-height: 52.875rem) {
+  :root {
+    font-size: calc((1600/1200) * 1rem) !important;
+  }
+
+  main {
+    width: 1600px !important;
+  }
+}
+
+@media only screen and (min-width: 116.875rem) and (min-height: 974px) {
+  :root {
+    font-size: 1.5rem !important;
+  }
+
+  main {
+    width: 1800px !important;
+  }
+}
+
+@media only screen and (min-width: 120rem) and (min-height: 990px) {
+  :root {
+    font-size: calc((1850/1200) * 1rem) !important;
+  }
+
+  main {
+    width: 1850px !important;
+  }
+}
+
+@media only screen and (min-width: 150rem) and (min-height: 76.9375rem) {
+  :root {
+    font-size: calc((2300/1200) * 1rem) !important;
+  }
+
+  main {
+    width: 2300px !important;
+  }
 }

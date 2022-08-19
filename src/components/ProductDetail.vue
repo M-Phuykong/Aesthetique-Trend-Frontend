@@ -18,8 +18,6 @@
               </template>
             </Carousel>
           </div>
-
-
         </div>
         <div class="col-auto p-4">
           <div class="product_info_container">
@@ -173,12 +171,10 @@ export default defineComponent({
     convert_price: function (price: number) {
       return price.toFixed(2);
     },
-    
     convert_to_KHR: function(price: number) {
       var KHR_price = price * 4000;
       return KHR_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
-
   }
 });
 </script>
