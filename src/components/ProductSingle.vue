@@ -1,22 +1,24 @@
 <template>
   <!-- col col-md-6 col-lg-4 col-xl-3 d-flex -->
   <div class="col col-md-6 col-lg-4 col-xl-3 d-flex">
-    <div class="card" style="border: 1px solid black">
-      <img class="img-fluid card-img-top" v-bind:src="img_src" alt="" />
+    <div class="card">
+      <img class="img-fluid card-img-top" style="border: 1px solid black"
+       v-bind:src="img_src" alt="" />
       <div class="card-body">
-        <h4 class="product_title">{{ product_title }}</h4>
-        <h4 class="product_price">${{ product_price }}</h4>
+        <div class="product_title">{{ product_title }}</div>
+        <div class="product_price">${{ product_price }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-
 .card {
   min-width: 100%;
-  max-width: 20vw;
+  max-width: 25vw;
   min-height: 100%;
+  border: 0px;
+  border-radius: 15px;
 }
 
 .card:hover {
@@ -26,20 +28,22 @@
 .card-img-top {
   min-width: 100%;
   width: 100%;
-  height: 16vw;
+  height: 15vw;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .card-body{
   padding: 2%;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
 }
 
 .product_title,
 .product_price {
-  padding: 2px;
+  font-size: 0.7rem;
+  /* padding: 2px; */
 }
 
 
@@ -61,7 +65,6 @@
       flex: none;
     }
 }
-
 </style>
 
 <script lang="ts">
@@ -69,6 +72,9 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "ProductSingle",
+  setup() {
+    
+  },
   props: {
     id: String,
     img_src: String,

@@ -1,17 +1,31 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
-export const productStore = defineStore({
+export interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+}
+
+interface ProductState {
+  items: Record<string, Product>;
+  ids: number[];
+}
+
+
+export const ProductStore = defineStore({
   id: "store",
   state: () => ({
-    products: [],
+    products: {},
+    ids: [],
   }),
 
   getters: {
     availableProducts(state) {
-      return state.products.filter(
-        (product: { _stock: number }) => product._stock > 0
-      );
+      return this.ids.map((i) => this.products[i]).filter((product) => product._stock > 0);
     },
   },
 
@@ -19,7 +33,12 @@ export const productStore = defineStore({
     async getProducts() {
       try {
         const response = await axios.get("http://localhost:5000/api/products");
-        this.products = response.data;
+
+        this.ids = response.data.map((product: any) => {
+          this.products[product._id] = product;
+          return product._id;
+        });
+
       } catch (err) {
         console.log(err);
       }

@@ -1,6 +1,7 @@
 import PathNotFoundVue from "@/components/PathNotFound.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import DetailProductViewVue from "../views/DetailProductView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,14 +24,18 @@ const router = createRouter({
       component: () => import("../views/AboutView.vue"),
     },
     {
+      path: "/cart",
+      name: "cart",
+      component: () => import("../views/CartView.vue"),
+    },
+    {
       path: "/product/:productID",
       name: "productDetail",
 
       component: () => import("../views/DetailProductView.vue"),
-
-
     },
   ],
 });
 
 export default router;
+

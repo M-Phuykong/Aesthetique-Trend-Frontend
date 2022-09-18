@@ -23,3 +23,4 @@ import ProductContainer from "@/components/ProductContainer.vue";
     </div>
   </main>
 </template>
+

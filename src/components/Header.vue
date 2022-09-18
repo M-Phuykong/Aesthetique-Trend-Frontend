@@ -29,6 +29,13 @@
             <h5 class="nav-link">
               <RouterLink to="/about">Contact</RouterLink>
             </h5>
+            <h5 class="nav-link">
+              <RouterLink to="/cart">
+                Cart
+                <div v-text = "count"></div>
+              </RouterLink>
+            </h5>
+
           </div>
         </div>
       </div>
@@ -68,4 +75,13 @@ navbar {
 }
 </style>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { CartStore } from '@/stores/cart';
+import { computed } from '@vue/runtime-core';
+
+const cartStore = CartStore();
+
+const count = computed(() => cartStore.count);
+
+
+</script>

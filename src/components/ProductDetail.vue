@@ -29,9 +29,10 @@
             <h4 class="product_stock">{{ data._stock }} Left in Stock</h4>
 
             <!-- WIP -->
-            <div class="add_to_cart_button">
-              <h4 class="">Add to Cart</h4>
+            <div class="add_to_cart_button_container">
+              <button @click="addToCart" class="">Add to Cart</button>
             </div>
+
           </div>
         </div>
       </div>
@@ -42,7 +43,7 @@
 <style scoped>
 
 /* Planning */
-.add_to_cart_button {
+.add_to_cart_button_container {
   background:#bef5a3
 }
 
@@ -129,11 +130,17 @@ img {
 import axios from "axios";
 import { defineComponent } from "vue";
 import { Carousel, Navigation, Slide, Pagination } from "vue3-carousel";
-
 import "vue3-carousel/dist/carousel.css";
+import { CartStore } from "@/stores/cart";
+
 
 export default defineComponent({
   name: "ProductDetail",
+  setup() {
+    const cartStore = CartStore();
+
+    return {cartStore}
+  },
   components: {
     Pagination,
     Carousel,
@@ -174,6 +181,11 @@ export default defineComponent({
     convert_to_KHR: function(price: number) {
       var KHR_price = price * 4000;
       return KHR_price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    },
+    addToCart: function(){
+      console.log(this.data);
+
+      this.cartStore.add(this.data);
     },
   }
 });
