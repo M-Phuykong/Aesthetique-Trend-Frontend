@@ -1,6 +1,6 @@
 # Aesthetique Trend 
 
-Frontend of an online store that sells stationaries.
+An online store that sells stationaries.
 
 # Landing Page
 
